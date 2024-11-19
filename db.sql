@@ -1,8 +1,8 @@
 --Create database
-CREATE DATABASE sqllearn;
+CREATE DATABASE testdb;
 
 --Delete database
-DROP DATABASE sqllearn;
+DROP DATABASE testdb;
 
 --Create table with column name
 CREATE TABLE COMPANY(
@@ -18,3 +18,26 @@ CREATE TABLE DEPARTMENT(
     DEPT CHAR(50) NOT NULL,
     EMP_ID INT NOT NULL
 );
+
+--Drop table
+DROP TABLE COMPANY,
+DEPARTMENT;
+
+--Create schema
+CREATE SCHEMA myschema;
+
+--Create table in schema
+CREATE TABLE myschema.company(
+    ID INT NOT NULL,
+    NAME VARCHAR (20) NOT NULL,
+    AGE INT NOT NULL,
+    ADDRESS CHAR (25),
+    SALARY DECIMAL (18, 2),
+    PRIMARY KEY (ID)
+);
+
+--Drop schema
+DROP SCHEMA myschema;
+
+--Drop schema with all contained objects
+DROP SCHEMA myschema CASCADE;
