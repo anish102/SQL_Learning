@@ -41,3 +41,30 @@ DROP SCHEMA myschema;
 
 --Drop schema with all contained objects
 DROP SCHEMA myschema CASCADE;
+
+--Insert value in columns of table
+INSERT INTO
+    COMPANY (ID, NAME, AGE, ADDRESS, SALARY)
+VALUES
+    (1, 'Paul', 32, 'California', 20000.00);
+
+--Insert multiple values
+INSERT INTO
+    COMPANY (ID, NAME, AGE, ADDRESS, SALARY, JOIN_DATE)
+VALUES
+    (4, 'Mark', 25, 'Rich-Mond', 65000.00),
+    (5, 'David', 27, 'Texas', 85000.00);
+
+--Fetch certain columns
+SELECT
+    ID,
+    NAME,
+    SALARY
+FROM
+    COMPANY;
+
+--Fetch whole table
+SELECT
+    *
+FROM
+    COMPANY;
