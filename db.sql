@@ -68,3 +68,19 @@ SELECT
     *
 FROM
     COMPANY;
+
+--Boolean expression
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    SALARY = 10000;
+
+--Numeric expression
+SELECT
+    (15 + 6) AS ADDITION;
+
+--Date expressions
+SELECT
+    CURRENT_TIMESTAMP;
