@@ -84,3 +84,94 @@ SELECT
 --Date expressions
 SELECT
     CURRENT_TIMESTAMP;
+
+--Where clause
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    AGE >= 25
+    AND SALARY >= 65000;
+
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    AGE IS NOT NULL;
+
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    NAME LIKE 'Pa%';
+
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    AGE IN (25, 27);
+
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    AGE NOT IN (25, 27);
+
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    AGE BETWEEN 25
+    AND 27;
+
+--Subquery
+SELECT
+    AGE
+FROM
+    COMPANY
+WHERE
+    EXISTS (
+        SELECT
+            AGE
+        FROM
+            COMPANY
+        WHERE
+            SALARY > 65000
+    );
+
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    AGE > (
+        SELECT
+            AGE
+        FROM
+            COMPANY
+        WHERE
+            SALARY > 65000
+    );
+
+--And/Or clause
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    AGE >= 25
+    AND SALARY >= 65000;
+
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    AGE >= 25
+    OR SALARY >= 65000;
