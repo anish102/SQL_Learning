@@ -175,3 +175,17 @@ FROM
 WHERE
     AGE >= 25
     OR SALARY >= 65000;
+
+--Update
+UPDATE
+    COMPANY
+SET
+    SALARY = 15000
+WHERE
+    ID = 3;
+
+UPDATE
+    COMPANY
+SET
+    ADDRESS = 'Texas',
+    SALARY = 20000;
