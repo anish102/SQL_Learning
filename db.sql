@@ -189,3 +189,27 @@ UPDATE
 SET
     ADDRESS = 'Texas',
     SALARY = 20000;
+
+--Delete
+DELETE FROM
+    COMPANY
+WHERE
+    ID = 2;
+
+DELETE FROM
+    COMPANY;
+
+--Like
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    AGE :: text LIKE '2%';
+
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    ADDRESS LIKE '%-%';
