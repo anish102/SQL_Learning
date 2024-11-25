@@ -213,3 +213,18 @@ FROM
     COMPANY
 WHERE
     ADDRESS LIKE '%-%';
+
+--Limit
+SELECT
+    *
+FROM
+    COMPANY
+LIMIT
+    4;
+
+SELECT
+    *
+FROM
+    COMPANY
+LIMIT
+    3 OFFSET 2;
