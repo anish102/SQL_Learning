@@ -260,4 +260,53 @@ SELECT
 FROM
     COMPANY
 GROUP BY
-    ADDRESS HAVING MIN(SALARY)>10000;
+    ADDRESS
+HAVING
+    MIN(SALARY) > 10000;
+
+--With statement
+With CTE AS (
+    Select
+        ID,
+        NAME,
+        AGE,
+        ADDRESS,
+        SALARY
+    FROM
+        COMPANY
+)
+Select
+    *
+From
+    CTE;
+
+WITH RECURSIVE t(n) AS (
+    VALUES
+        (0)
+    UNION
+    ALL
+    SELECT
+        SALARY
+    FROM
+        COMPANY
+    WHERE
+        SALARY < 30000
+)
+SELECT
+    sum(n)
+FROM
+    t;
+
+WITH moved_rows AS (
+    DELETE FROM
+        COMPANY
+    WHERE
+        SALARY >= 30000 RETURNING *
+)
+INSERT INTO
+    COMPANY1 (
+        SELECT
+            *
+        FROM
+            moved_rows
+    );
