@@ -310,3 +310,13 @@ INSERT INTO
         FROM
             moved_rows
     );
+
+--Having
+SELECT
+    NAME
+FROM
+    COMPANY
+GROUP BY
+    name
+HAVING
+    count(name) < 2;
