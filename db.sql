@@ -320,3 +320,9 @@ GROUP BY
     name
 HAVING
     count(name) < 2;
+
+--Distinct
+SELECT
+    DISTINCT name
+FROM
+    COMPANY;
