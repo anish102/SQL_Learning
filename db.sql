@@ -326,3 +326,23 @@ SELECT
     DISTINCT name
 FROM
     COMPANY;
+
+--Null values
+UPDATE
+    COMPANY
+SET
+    ADDRESS = NULL,
+    SALARY = NULL
+where
+    ID IN(6, 7);
+
+SELECT
+    ID,
+    NAME,
+    AGE,
+    ADDRESS,
+    SALARY
+FROM
+    COMPANY
+WHERE
+    SALARY IS NULL;
