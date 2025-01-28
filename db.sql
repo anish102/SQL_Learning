@@ -461,3 +461,13 @@ ALTER TABLE
 CREATE INDEX salary_index ON COMPANY(SALARY);
 
 DROP INDEX salary_index;
+
+--Transaction
+BEGIN Transaction;
+
+DELETE FROM
+    COMPANY
+WHERE
+    AGE = 25;
+
+COMMIT;
