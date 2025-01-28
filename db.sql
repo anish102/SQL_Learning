@@ -265,8 +265,8 @@ HAVING
     MIN(SALARY) > 10000;
 
 --With statement
-With CTE AS (
-    Select
+WITH CTE AS (
+    SELECT
         ID,
         NAME,
         AGE,
@@ -275,9 +275,9 @@ With CTE AS (
     FROM
         COMPANY
 )
-Select
+SELECT
     *
-From
+FROM
     CTE;
 
 WITH RECURSIVE t(n) AS (
@@ -333,7 +333,7 @@ UPDATE
 SET
     ADDRESS = NULL,
     SALARY = NULL
-where
+WHERE
     ID IN(6, 7);
 
 SELECT
@@ -456,3 +456,8 @@ ADD
 
 ALTER TABLE
     COMPANY DROP GENDER;
+
+--Indexes
+CREATE INDEX salary_index ON COMPANY(SALARY);
+
+DROP INDEX salary_index;
