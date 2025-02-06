@@ -504,3 +504,14 @@ FROM
     COMPANY_VIEW;
 
 DROP VIEW COMPANY_VIEW;
+
+--Privileges
+CREATE USER manisha WITH PASSWORD 'password';
+
+GRANT ALL ON COMPANY TO manisha;
+
+REVOKE ALL ON COMPANY
+FROM
+    manisha;
+
+DROP USER manisha;
