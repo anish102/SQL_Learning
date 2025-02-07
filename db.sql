@@ -515,3 +515,58 @@ FROM
     manisha;
 
 DROP USER manisha;
+
+--Subqueries
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    ID IN (
+        SELECT
+            ID
+        FROM
+            COMPANY
+        WHERE
+            SALARY > 45000
+    );
+
+INSERT INTO
+    COMPANY_BKP
+SELECT
+    *
+FROM
+    COMPANY
+WHERE
+    ID IN (
+        SELECT
+            ID
+        FROM
+            COMPANY
+    );
+
+UPDATE
+    COMPANY
+SET
+    SALARY = SALARY * 0.50
+WHERE
+    AGE IN (
+        SELECT
+            AGE
+        FROM
+            COMPANY_BKP
+        WHERE
+            AGE >= 27
+    );
+
+DELETE FROM
+    COMPANY
+WHERE
+    AGE IN (
+        SELECT
+            AGE
+        FROM
+            COMPANY_BKP
+        WHERE
+            AGE > 27
+    );
