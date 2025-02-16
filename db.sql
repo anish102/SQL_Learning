@@ -570,3 +570,19 @@ WHERE
         WHERE
             AGE > 27
     );
+
+-- Function
+CREATE
+OR REPLACE FUNCTION totalRecords() RETURNS integer AS $ total $ DECLARE total integer;
+
+BEGIN
+SELECT
+    count(*) INTO total
+FROM
+    COMPANY;
+
+RETURN total;
+
+END;
+
+$ total $ LANGUAGE plpgsql;
